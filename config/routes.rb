@@ -4,6 +4,8 @@ Rails.application.routes.draw do
       resources :users
       resources :recipes
       resources :meals
+      post 'signin', to: "users#signin"
+      get 'get_recipes', to: "recipes#recipes"
     end
   end
 end

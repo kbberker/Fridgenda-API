@@ -5,5 +5,10 @@ class Api::V1::RecipesController < ApplicationController
     render json: @recipes
   end
 
+  def recipes
+    recipes = Recipe.get_recipes
+    render json: recipes
+  end
+
 end
 
