@@ -10,7 +10,7 @@ class Api::V1::RecipesController < ApplicationController
     # render json: recipes
     recipes_json = JSON.parse(recipes)
     recipes_json["recipes"].each do |recipe|
-      new_recipe = Recipe.new("name": recipe["title"])    
+      new_recipe = Recipe.new("name": recipe["title"], "url": recipe["source_url"])    
       if new_recipe
         new_recipe.save
       else
