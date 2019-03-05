@@ -1,3 +1,5 @@
+require 'rest-client'
+
 class Api::V1::RecipesController < ApplicationController
 
   def index
@@ -6,8 +8,7 @@ class Api::V1::RecipesController < ApplicationController
   end
 
   def recipes
-    recipes = Recipe.get_recipes
-    # render json: recipes
+    # Add API request here before production
     recipes_json = JSON.parse(recipes)
     recipes_json["recipes"].each do |recipe|
       new_recipe = Recipe.new("name": recipe["title"], "url": recipe["source_url"])    

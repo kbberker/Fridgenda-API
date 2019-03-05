@@ -7,6 +7,7 @@ class Recipe < ApplicationRecord
   has_many :meals, through: :recipes
 
   def self.get_recipes
+    byebug
     recipe_data 
   end
 
